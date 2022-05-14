@@ -1,30 +1,36 @@
 import random
 
-while True:
-    user_action = input("Enter a choice (rock, paper, scissors): ")
-    possible_actions = ["rock", "paper", "scissors"]
-    computer_action = random.choice(possible_actions)
-    print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+print("Welcome to Password Generator")
 
-    if user_action == computer_action:
-        print(f"Both players selected {user_action}. It's a tie!")
-    elif user_action == "rock":
-        if computer_action == "scissors":
-            print("Rock smashes scissors! You win!")
-        else:
-            print("Paper covers rock! You lose.")
-    elif user_action == "paper":
-        if computer_action == "rock":
-            print("Paper covers rock! You win!")
-        else:
-            print("Scissors cuts paper! You lose.")
-    elif user_action == "scissors":
-        if computer_action == "paper":
-            print("Scissors cuts paper! You win!")
-        else:
-            print("Rock smashes scissors! You lose.")
+cherecters_for_Genarating_password = ("1234567890qwertyuiopasdfghjklzxcvnmQWERTYUIOPASDFGHJKLZXCVNM*&%$#@!")
 
-    play_again = input("Play again? (y/n): ")
-    if play_again.lower() != "y":
-        break
+    
+NUM_PASSWORDS = int(input("How many passwords you have to create:- "))
+    
+#print(NUM_PASSWORDS)
+    
+Length_of_password = int(input("What should be the lenth of your password:- "))
+    
+print("So these are your passwords:- ")
+#main code
+for passw in range(NUM_PASSWORDS):
+    password = ""
+    for should_apply in range (Length_of_password):
+        password += random.choice(cherecters_for_Genarating_password)
+    print(password)
+print("Are these passwords satisfying you Y/N")
+satisfing = str(input())
+        
+if satisfing == "Y" or satisfying == "y":
+    print("Ok sir Thanks")
+elif satisfing == "N" or satisfying == "n":
+    print("So these are your passwords Again:- ")
+    for passw in range(NUM_PASSWORDS):
+        password = ""
+        for should_apply in range (Length_of_password):
+            password += random.choice(cherecters_for_Genarating_password)
+        print(password)
+else:
+    print("incorrect input")
+      
       
